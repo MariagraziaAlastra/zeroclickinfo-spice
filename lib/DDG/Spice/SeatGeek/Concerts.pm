@@ -1,19 +1,19 @@
-package DDG::Spice::SeatGeek;
+package DDG::Spice::SeatGeek::Concerts;
 # ABSTRACT: Returns upcoming concerts for a band/artist.
 
 use DDG::Spice;
 
 primary_example_queries "live show weezer", "upcoming concerts in flames";
 description "Upcoming concerts from SeatGeek";
-name "SeatGeek";
-code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/SeatGeek.pm";
+name "SeatGeek Concerts";
+code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/SeatGeek/Concerts.pm";
 category "entertainment";
 topics "entertainment", "music";
 attribution github => ['https://github.com/MariagraziaAlastra','MariagraziaAlastra'];
 
 triggers startend => 'upcoming concert', 'upcoming concerts', 'concert', 'concerts', 'live', 'live show', 'live shows';
 
-spice to => 'http://api.seatgeek.com/2/events?performers.slug=$1';
+spice to => 'http://api.seatgeek.com/2/events?performers.slug=$1&taxonomies.name=concert';
 spice wrap_jsonp_callback => 1;
 
 handle remainder_lc => sub {

@@ -3,7 +3,7 @@
     env.ddg_spice_seat_geek = function(api_result) {
 
         if(api_result.error || !api_result || api_result.events.length === 0) {
-            return Spice.failed('seat_geek');
+            return Spice.failed('seat_geek_concerts');
         }
 
         var query = DDG.get_query();
@@ -126,7 +126,7 @@
             },
             templates: {
                 group: 'products',
-                item: Spice.seat_geek.item,
+                item: Spice.seat_geek.concerts.item,
                 detail: false,
                 item_detail: false,
                 options: {
