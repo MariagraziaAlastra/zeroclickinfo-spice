@@ -1,4 +1,4 @@
-.zci--seat_geek h3 {
+.zci--seat_geek_concerts h3 {
     line-height: 1.15;
     font-weight: 400;
     padding-top: 0;
@@ -7,31 +7,31 @@
     font-size: 1.5em;
 }
 
-.zci--seat_geek .header_container {
+.zci--seat_geek_concerts .header_container {
     height: 8em;
 }
 
-.zci--seat_geek .price {
+.zci--seat_geek_concerts .price {
     font-weight: 600;
 }
 
-.zci--seat_geek .price,
-.zci--seat_geek .noprice {
+.zci--seat_geek_concerts .price,
+.zci--seat_geek_concerts .noprice {
     margin-top: 1.1em;
     height: 1.1em;
     float: left;
     font-size: 1.1em;
 }
 
-.zci--seat_geek .tile__body.has-foot {
+.zci--seat_geek_concerts .tile__body.has-foot {
     padding: 1.1em;
 }
 
-.zci--seat_geek .tile__title__sub {
+.zci--seat_geek_concerts .tile__title__sub {
     font-size: 0.7em;
 }
 
-.zci--seat_geek .date {
+.zci--seat_geek_concerts .date {
     float: right;
     border: 1px solid #ddd;
     padding: 0.7em 0.9em;
@@ -44,27 +44,27 @@
     margin-top: -1.5em;
 }
 
-.zci--seat_geek .day {
+.zci--seat_geek_concerts .day {
     font-size: 1.6em;
     line-height: 0.8;
 }
 
-.zci--seat_geek .seat_geek-artist {
+.zci--seat_geek_concerts .seat_geek-artist {
     font-size: 1.1em;
 }
 
-.zci--seat_geek .where {
+.zci--seat_geek_concerts .where {
     font-size: 1.1em;
 }
 
-.zci--seat_geek .where.place {
+.zci--seat_geek_concerts .where.place {
     width: 11em;
 }
 
-.zci--seat_geek .where.city {
+.zci--seat_geek_concerts .where.city {
     width: 9em;
 }
 
-    .is-mobile .zci--seat_geek .where.city {
+    .is-mobile .zci--seat_geek_concerts .where.city {
         width: 7em;
     }

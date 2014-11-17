@@ -3,7 +3,7 @@ package DDG::Spice::SeatGeek::Sports;
 
 use DDG::Spice;
 
-primary_example_queries "UEFA Champions League events", "Bayern-Munich upcoming matches";
+primary_example_queries "UEFA Champions League events", "Atletico Madrid upcoming matches";
 description "Upcoming sport events from SeatGeek";
 name "SeatGeek Sports";
 code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/SeatGeek/Sports.pm";
@@ -13,7 +13,7 @@ attribution github => ['https://github.com/MariagraziaAlastra','MariagraziaAlast
 
 triggers startend => 'upcoming matches', 'events', 'event', 'upcoming match';
 
-spice to => 'http://api.seatgeek.com/2/events?performers.slug=$1&taxonomies.name=sports';
+spice to => 'http://api.seatgeek.com/2/events?q=$1&taxonomies.name=sports';
 spice wrap_jsonp_callback => 1;
 
 handle remainder_lc => sub {
@@ -23,8 +23,6 @@ handle remainder_lc => sub {
     $_ =~ s/^\s+//;
     # Removes spaces from the end of the query
     $_ =~ s/\s+$//;
-    # Replaces spaces between words with dashes, because the API requires it
-    #$_ =~ s/\s/\-/g;
     return $_ if $_;
     return;
 };

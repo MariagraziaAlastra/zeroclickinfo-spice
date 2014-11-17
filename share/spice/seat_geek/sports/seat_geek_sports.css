@@ -1,12 +1,35 @@
-/*
-    Document   : zeroclickinfo-spice/share/spice/seat_geek/sports/seat_geek_sports．css
-    Created on : 2014-11-11 12:32 PM
-    Author     : MariagraziaAlastra
-    Description:
-    Purpose of the stylesheet follows.
-    To change this template use Tools | Templates.
-*/
+.zci--seat_geek_sports .header_container {
+    height: 7em;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
 
-root {
-    display: block;
+.zci--seat_geek_sports .price {
+    font-weight: 600;
+}
+
+.zci--seat_geek_sports .header_container img {
+    width: 100%;
+}
+
+.zci--seat_geek_sports .tile__body.has-foot {
+    padding: 0;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.zci--seat_geek_sports .tile__content {
+    margin-bottom: 0.7em;
+}
+
+.zci--seat_geek_sports .header_container h3 {
+    position: absolute;
+    width: 8em;
+    color: #fff;
+    margin-top: -65%;
+    word-wrap: normal;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -1,6 +1,6 @@
 (function(env) {
     "use strict";
-    env.ddg_spice_seat_geek = function(api_result) {
+    env.ddg_spice_seat_geek_sports = function(api_result) {
 
         if(api_result.error || !api_result || api_result.events.length === 0) {
             return Spice.failed('seat_geek_concerts');
@@ -12,8 +12,8 @@
         var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
         Spice.add({
-            id: "seat_geek",
-            name: "Concerts",
+            id: "seat_geek_sports",
+            name: "Sports",
             data: api_result.events,
             meta: {
                 sourceName: "SeatGeek",
@@ -39,7 +39,7 @@
 
                 function getYear(date) {
                     if(date) {
-                        var year = date.getYear();
+                        var year = date.getFullYear();
                         return year;
                     }
 
@@ -77,7 +77,6 @@
                 // Find the performer queried for,
                 // or return the first of the list if it's not
                 // specified in the query
-
                 function getPerformer(performers) {
                     var performer = performers[0];
                     if(performers.length === 1) {
@@ -98,17 +97,18 @@
                 return {
                     url: item.url,
                     price: getPrice(item.stats.lowest_price, item.stats.highest_price),
-                    title: item.short_title,
+                    title: performer.name,
                     place: item.venue.name,
                     img: performer.image,
-                    city: item.venue.city + ", " + item.venue.country,
+                    city: "@ " + item.venue.city + ", " + item.venue.country,
                     month: getMonth(getDate(item.datetime_local)),
-                    day: getDay(getDate(item.datetime_local))
+                    day: getDay(getDate(item.datetime_local)),
+                    year: getYear(getDate(item.datetime_local))
                 };
             },
             templates: {
                 group: 'products',
-                item: Spice.seat_geek.sports.item,
+                item: Spice.seat_geek_sports.item,
                 detail: false,
                 item_detail: false,
                 options: {
